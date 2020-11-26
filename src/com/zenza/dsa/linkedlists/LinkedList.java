@@ -70,7 +70,7 @@ public class LinkedList {
             first = last = null;
         }
         var second = first.next;
-        first.next = null;
+        first = null;
         first = second;
     }
 
