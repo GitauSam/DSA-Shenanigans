@@ -1,14 +1,22 @@
 package com.zenza.dsa;
 
+import com.zenza.dsa.arrays.Array;
+import com.zenza.dsa.arrays.RotateArray;
+import com.zenza.dsa.dec2bin.ConvertToDecimal;
 import com.zenza.dsa.linkedlists.LinkedList;
 import com.zenza.dsa.linkedlists.MySinglyLinkedList;
+import com.zenza.dsa.ms.SmallestPossibleValue;
+import com.zenza.dsa.projecteuler.CollatzProblem;
+import com.zenza.dsa.projecteuler.SumOfHundredFiftyNumbers;
+
+import java.util.Arrays;
 
 public class Main {
 
     static MySinglyLinkedList myList = new MySinglyLinkedList();
 
     public static void main(String[] args) {
-        testMySinglyLinkedListContains();
+        testRotateArray();
     }
 
     static void testLinkedListOps() {
@@ -62,5 +70,39 @@ public class Main {
         System.out.println(indexOf50);
         System.out.println(indexOf200);
         System.out.println(indexOf250);
+    }
+
+    static void testConvertToDecimalAndGetLongestBinaryGap() {
+        var convertToDecimal = new ConvertToDecimal();
+        var bin = convertToDecimal.convertDecToBin(1610612737);
+        System.out.println(bin);
+        System.out.println(convertToDecimal.getLongestBinaryGap(bin));
+    }
+
+    static void testSmallestPossibleValue() {
+        var smallestPossibleValue = new SmallestPossibleValue();
+        System.out.println(smallestPossibleValue.getSmallestPossibleValue(123));
+    }
+
+    static void testFirstTenDigitsOfSumOfHundredFiftyDigits() {
+        SumOfHundredFiftyNumbers s = new SumOfHundredFiftyNumbers();
+        s.sum();
+    }
+
+    static void testCollatzProblem() {
+        CollatzProblem collatzProblem = new CollatzProblem();
+        collatzProblem.largestChainUnderMillion();
+    }
+
+    static void testDec2BinTry2() {
+        ConvertToDecimal c = new ConvertToDecimal();
+
+        System.out.println(c.getLongestBinGap(34));
+    }
+
+    static void testRotateArray() {
+        RotateArray rotateArray = new RotateArray();
+        int [] a = new int[] {1, 2, 3, 4};
+        System.out.println(Arrays.toString(rotateArray.refactoredRotate(a, 4)));
     }
 }

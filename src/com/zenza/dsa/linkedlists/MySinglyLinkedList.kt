@@ -6,6 +6,8 @@ class MySinglyLinkedList {
         var next: Node? = null
     }
 
+    lateinit var x: Integer
+
     private var head: Node? = null
     private var tail: Node? = null
 
